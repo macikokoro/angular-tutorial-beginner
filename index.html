@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <!--Directive to attach html page-->
-<html ng-app>
+<html ng-app="gemStore">
   <head>
-    <link rel="stylesheet" type="text.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
     <title></title>
   </head>
-  <body>
-      <p>
-        I am {{4 + 6}}
+  <body ng-controller="StoreController as store">
+    <div class="list-group">
+      <div class="list-group-item">    
+      <h3>{{store.product.name}}
+      <em>${{store.product.price}}</em>
+      </h3>
+      <p>{{store.product.description}}</p>
+      <button ng-show="gemStore.product.canPurchase">Add to Cart</button>
+      </div>
+    </div>
   </body>
 </html>
